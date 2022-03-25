@@ -169,9 +169,30 @@ export default class Bot {
 }
 
 import Player from './player.js';
-import Example from './example.js';
+import Matheus from './matheus.js';
+import Abbe from './abbe.js';
+import Jakob from './jakob.js';
 
-export let bots = {
+function shuffleObject(obj) {
+  // new obj to return
+  let newObj = {};
+  // create keys array
+  var keys = Object.keys(obj);
+  // randomize keys array
+  keys.sort(function (a, b) {
+    return Math.random() - 0.5;
+  });
+  // save in new array
+  keys.forEach(function (k) {
+    newObj[k] = obj[k];
+  });
+  return newObj;
+}
+
+//scramble bots
+export let bots = shuffleObject({
   [Player.name]: new Bot(Player.name, Player.tick),
-  [Example.name]: new Bot(Example.name, Example.tick),
-};
+  [Matheus.name]: new Bot(Matheus.name, Matheus.tick),
+  [Abbe.name]: new Bot(Abbe.name, Abbe.tick),
+  [Jakob.name]: new Bot(Jakob.name, Jakob.tick),
+});
