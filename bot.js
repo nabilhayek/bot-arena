@@ -17,7 +17,7 @@ export default class Bot {
     this.reloadTime = 500;
     this.radius = 20;
     this.image = new Image();
-    this.image.src = `https://robohash.org/${this.name}.png?set=set2&size=80x80&bgset=bg2`;
+    this.image.src = './images/bot.png';
     this.tick = tick;
   }
 
